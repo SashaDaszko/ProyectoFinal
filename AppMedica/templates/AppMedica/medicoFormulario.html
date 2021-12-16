@@ -3,20 +3,20 @@
 
 {% load static %}
     {% block contenido %}
-        <h1 class="text-white font-weight-bold">MEDICOS</h1>
+        <h1 class="text-white font-weight-bold">MÉDICOS</h1>
     {% endblock %}
 
     {% block contenido2 %}
-        <p class="text-white-75 mb-5">Bienvenido</p>
+        <p class="text-white-75 mb-5">Sumate a un grupo de profesionales en constante crecimiento</p>
+        <p class="text-white-75 mb-5">Debajo encontrarás el formulario de contacto</p>
 
-        <a class="btn btn-primary btn-xl" href="{% url 'Medicos' %}">Atras</a>
     {% endblock %}
 
     {% block contenido3 %}
     <div class="row gx-4 gx-lg-5 justify-content-center">
         <div class="col-lg-8 col-xl-6 text-center">    
             <h1>Quieres Trabajar con nosotros?</h1>
-            <p>Completa los siguientes datos y te contactaremos, podrias formar parte de este equipo</p>
+            <p>Completa los siguientes datos y te contactaremos, podrias formar parte de este gran equipo</p>
             {% if miFormulario.errors %}
         </div>
     </div>   
@@ -26,9 +26,8 @@
         
         <form action="/AppMedica/medicoFormulario/" method="POST">{% csrf_token %}
             
-        <!-- <p> Direccion: <input type="text" name="direccion">  </p>
-            
-            <p> Año: <input type="number" name="anioFund">  </p>  -->
+
+
             <table>
             
             {{ miFormulario.as_table }}

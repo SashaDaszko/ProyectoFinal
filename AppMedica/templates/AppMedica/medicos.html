@@ -7,8 +7,10 @@
     {% endblock %}
 
     {% block contenido2 %}
-        <p class="text-white-75 mb-5">Espacio para que los médicos ingresen sus datos</p>
-        <a class="btn btn-primary btn-xl" href="#about">Ingrese</a>
+        <p class="text-white-75 mb-5">Conozca a nuestro Staff</p>
+
+        <p class="text-white-75 mb-5">¿Quieres trabajar con nosotros? Haz click en el siguiente boton</p>
+        <a class="btn btn-primary btn-xl" href="{% url 'MedicoFormulario' %}">Form</a>
     {% endblock %}
 
     {% block contenido3 %}

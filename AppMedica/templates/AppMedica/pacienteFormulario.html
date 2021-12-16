@@ -3,20 +3,20 @@
 
 {% load static %}
     {% block contenido %}
-        <h1 class="text-white font-weight-bold">MEDICOS</h1>
+        <h1 class="text-white font-weight-bold">Pacientes</h1>
     {% endblock %}
 
     {% block contenido2 %}
         <p class="text-white-75 mb-5">Bienvenido</p>
 
-        <a class="btn btn-primary btn-xl" href="{% url 'Medicos' %}">Atras</a>
+        <a class="btn btn-primary btn-xl" href="{% url 'Pacientes' %}">Atras</a>
     {% endblock %}
 
     {% block contenido3 %}
     <div class="row gx-4 gx-lg-5 justify-content-center">
         <div class="col-lg-8 col-xl-6 text-center">    
-            <h1>Quieres Trabajar con nosotros?</h1>
-            <p>Completa los siguientes datos y te contactaremos, podrias formar parte de este equipo</p>
+            <h1>Queres ingresar los datos de un paciente?</h1>
+            <p>Completa los siguientes datos y te contactaremos</p>
             {% if miFormulario.errors %}
         </div>
     </div>   
@@ -24,7 +24,7 @@
     
         {% endif %}
         
-        <form action="/AppMedica/medicoFormulario/" method="POST">{% csrf_token %}
+        <form action="/AppMedica/pacienteFormulario/" method="POST">{% csrf_token %}
             
         <!-- <p> Direccion: <input type="text" name="direccion">  </p>
             

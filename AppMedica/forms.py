@@ -14,9 +14,10 @@ class MedicoFormulario(forms.Form):
 class PacienteFormulario(forms.Form):
     
     nombre=forms.CharField(max_length=40)
-    apellido=forms.CharField(max_length=40)    
-    telefono=forms.IntegerField()
+    apellido=forms.CharField(max_length=40)
     fNac=forms.DateField(initial=datetime.date.today)
+    telefono=forms.IntegerField()
+    email= EmailField()
     
 class ContactoFormulario(forms.Form):
     

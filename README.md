@@ -36,8 +36,8 @@ Si se trata de un usuario "paciente", la página de inicio dispone de un botón 
 
 # Autores
 
-Rodrigo Elvira - AGREGAR LINK DE GITHUB
-Sasha Daszko - AGREGAR LINK DE GITHUB
+Rodrigo Elvira - <A HREF="otra_pagina.html"> Este es un link </A>
+Sasha Daszko - <A HREF="https://github.com/SashaDaszko"> Este es un link </A>
 
 
 

@@ -26,3 +26,4 @@ def medicos(request):
 def contacto(request):
 
     return render(request,'AppMedica/contacto.html')
+

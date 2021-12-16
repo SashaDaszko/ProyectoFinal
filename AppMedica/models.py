@@ -32,7 +32,7 @@ class Servicio(models.Model):
 
     def __str__(self):
 
-        return f"{self.tipoServicio}, {self.especialidad}, {self.telefono}, {self.precio}"
+        return f"{self.tipoServicio}, {self.especialidad}, {self.precio}"
 
 class Contacto(models.Model):
     

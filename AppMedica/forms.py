@@ -1,6 +1,6 @@
 from django import forms
 from django.db.models.fields import DateField
-from django.forms.fields import EmailField, IntegerField
+from django.forms.fields import EmailField, IntegerField,CharField
 
 class MedicoFormulario(forms.Form):
     #Especificar los campos

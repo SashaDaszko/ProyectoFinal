@@ -6,13 +6,8 @@ class Medico(models.Model):
     apellido = models.CharField(max_length=40)
     especialidad = models.CharField(max_length=40)
     matricula = models.IntegerField()
-<<<<<<< HEAD
     email = models.EmailField()
 
-=======
-    email=models.EmailField()
-    
->>>>>>> c6470f2b09bf1f266569cc86fc47ffd7c76d8653
     def __str__(self):
         return f"{self.apellido}, {self.especialidad}, {self.matricula},{self.email}"
 

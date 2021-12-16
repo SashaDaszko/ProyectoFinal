@@ -7,3 +7,6 @@ admin.site.register(Paciente)
 admin.site.register(Servicio)
 
 
+# Admin: admin
+# Password: 12345678$
+

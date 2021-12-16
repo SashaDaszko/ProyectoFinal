@@ -36,8 +36,8 @@ Si se trata de un usuario "paciente", la página de inicio dispone de un botón 
 
 # Autores
 
-Rodrigo Elvira - <A HREF="otra_pagina.html"> Este es un link </A>
-Sasha Daszko - <A HREF="https://github.com/SashaDaszko"> Este es un link </A>
+Rodrigo Elvira - <A HREF="https://github.com/rodrigoelvira"> Github </A>
+Sasha Daszko - <A HREF="https://github.com/SashaDaszko"> Github </A>
 
 
 

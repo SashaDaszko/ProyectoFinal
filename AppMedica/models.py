@@ -1,4 +1,5 @@
 from django.db import models
+from django.db.models.fields import EmailField
 
 class Medico(models.Model):
 
@@ -33,3 +34,14 @@ class Servicio(models.Model):
 
         return f"{self.tipoServicio}, {self.especialidad}, {self.telefono}, {self.precio}"
 
+class Contacto(models.Model):
+    
+    nombre=models.CharField(max_length=40)
+    apellido=models.CharField(max_length=40)
+    email=models.EmailField()
+    tel=models.IntegerField()
+    mensaje=models.CharField(max_length=250)
+    
+    def __str__(self):
+        
+        return f"{self.nombre},{self.apellido},{self.email},{self.tel},{self.mensaje}"

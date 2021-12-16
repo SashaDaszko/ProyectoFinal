@@ -1,10 +1,59 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from AppMedica.models import Medico,Paciente,Servicio
-from AppMedica.forms import MedicoFormulario
+from AppMedica.models import Medico,Paciente,Servicio,Contacto
+from AppMedica.forms import MedicoFormulario,ContactoFormulario,PacienteFormulario
+
+def contactoFormulario (request):
+    
+    #Obtiene la direccion el anioFund
+    if request.method == "POST":
+        
+        miFormulario = ContactoFormulario(request.POST)
+        
+        if miFormulario.is_valid():  # va con ()
+            
+            informacion = miFormulario.cleaned_data
+        
+            contactoInsta = Contacto(nombre=informacion["nombre"], apellido=informacion["apellido"],email=informacion["email"],tel=informacion["tel"],mensaje=informacion["mensaje"])
+            
+            contactoInsta.save()  #Este save guarda en la base de datos
+            
+            return render(request,'AppMedica/inicio.html') 
+        
+    else:
+        
+        miFormulario = ContactoFormulario()
+    
+    #return HttpResponse ("Esto es una prueba de inicio")
+    return render(request,'AppMedica/contactoFormulario.html',{"miFormulario":miFormulario})
+
+def pacienteFormulario (request):
+    
+    #Obtiene la direccion el anioFund
+    if request.method == "POST":
+        
+        miFormulario = PacienteFormulario(request.POST)
+        
+        if miFormulario.is_valid():  # va con ()
+            
+            informacion = miFormulario.cleaned_data
+        
+            pacienteInsta = Paciente(nombre=informacion["nombre"], apellido=informacion["apellido"],telefono=informacion["telefono"],fechaNaciemiento=informacion["fNac"])
+            
+            pacienteInsta.save()  #Este save guarda en la base de datos
+            
+            return render(request,'AppMedica/inicio.html') 
+        
+    else:
+        
+        miFormulario = PacienteFormulario()
+    
+    #return HttpResponse ("Esto es una prueba de inicio")
+    return render(request,'AppMedica/pacienteFormulario.html',{"miFormulario":miFormulario})
+
 
 def medicoFormulario (request):
-    
+   
     #Obtiene la direccion el anioFund
     if request.method == "POST":
         

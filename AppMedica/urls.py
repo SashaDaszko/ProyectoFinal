@@ -1,5 +1,5 @@
 from django.urls import path
-from AppMedica import views
+from AppMedica import views,forms
 
 
 urlpatterns = [
@@ -11,7 +11,7 @@ urlpatterns = [
     path('contacto/', views.contacto, name='Contacto'),
     path('medicoFormulario/',views.medicoFormulario,name="MedicoFormulario"),
     path('pacienteFormulario/',views.pacienteFormulario,name="PacienteFormulario"),
-    path('contactoFormulario/',views.contactoFormulario,name="ContactoFormulario"),
+    path('contactoFormulario/',views.contactoFormulario,name='ContactoFormulario'),
     
     
     

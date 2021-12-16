@@ -1,6 +1,7 @@
 from django import forms
 from django.db.models.fields import DateField
 from django.forms.fields import EmailField, IntegerField,CharField
+import datetime
 
 class MedicoFormulario(forms.Form):
     #Especificar los campos
@@ -15,7 +16,7 @@ class PacienteFormulario(forms.Form):
     nombre=forms.CharField(max_length=40)
     apellido=forms.CharField(max_length=40)    
     telefono=forms.IntegerField()
-    fNac=forms.IntegerField()
+    fNac=forms.DateField(initial=datetime.date.today)
     
 class ContactoFormulario(forms.Form):
     

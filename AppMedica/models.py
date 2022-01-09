@@ -19,23 +19,13 @@ class Paciente(models.Model):
     fNac = models.DateField()
     telefono = models.IntegerField()
     email = models.EmailField(null=True)
-    servicio = models.CharField(max_length=40)
+    servicio = models.CharField(max_length=40, default='')
     
     
     def __str__(self):
 
         return f"{self.nombre}, {self.apellido}, {self.fNac}, {self.telefono}, {self.email}, {self.servicio}"
 
-
-class Servicio(models.Model):
-
-    tipoServicio = models.CharField(max_length=40)
-    especialidad = models.CharField(max_length=40)
-    precio = models.IntegerField()
-
-    def __str__(self):
-
-        return f"{self.tipoServicio}, {self.especialidad}, {self.precio}"
 
 class Contacto(models.Model):
     

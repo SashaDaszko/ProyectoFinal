@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from AppMedica.models import Medico,Paciente,Servicio,Contacto
+from AppMedica.models import Medico,Paciente,Contacto
 from AppMedica.forms import MedicoFormulario,ContactoFormulario,PacienteFormulario
 
 def contactoFormulario (request):

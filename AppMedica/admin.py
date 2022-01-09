@@ -4,7 +4,6 @@ from .models import*
 
 admin.site.register(Medico)
 admin.site.register(Paciente)
-admin.site.register(Servicio)
 admin.site.register(Contacto)
 
 # Admin: admin

@@ -38,7 +38,7 @@ def pacienteFormulario (request):
             
             informacion = miFormulario.cleaned_data
         
-            pacienteInsta = Paciente(nombre=informacion["nombre"], apellido=informacion["apellido"],fNac=informacion["fNac"], telefono=informacion["telefono"], email=informacion["email"], servicioSolicitado=informacion["servicioSolicitado"])
+            pacienteInsta = Paciente(nombre=informacion["nombre"], apellido=informacion["apellido"],fNac=informacion["fNac"], telefono=informacion["telefono"], email=informacion["email"], servicio=informacion["servicio"])
             
             pacienteInsta.save()  #Este save guarda en la base de datos
             

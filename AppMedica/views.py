@@ -38,7 +38,7 @@ def pacienteFormulario (request):
             
             informacion = miFormulario.cleaned_data
         
-            pacienteInsta = Paciente(nombre=informacion["nombre"], apellido=informacion["apellido"],fNac=informacion["fNac"], telefono=informacion["telefono"], email=informacion["email"],)
+            pacienteInsta = Paciente(nombre=informacion["nombre"], apellido=informacion["apellido"],fNac=informacion["fNac"], telefono=informacion["telefono"], email=informacion["email"], servicioSolicitado=informacion["servicioSolicitado"])
             
             pacienteInsta.save()  #Este save guarda en la base de datos
             
@@ -102,4 +102,61 @@ def medicos(request):
 def contacto(request):
 
     return render(request,'AppMedica/contacto.html')
+
+
+
+
+def busquedaMedico(request):
+    
+    return render(request,'AppMedica/busquedaMedico.html')
+
+
+
+
+def buscarMedico(request):
+    
+    
+    if request.GET["apellido"]:
+        
+        apellido = request.GET["apellido"]
+        
+        medicos = Medico.objects.filter(apellido__icontains=apellido)
+    
+        
+        return render(request, "AppMedica/resultadoMedicos.html",{"medicos":medicos, "apellido":apellido})
+         
+         
+    else: 
+        
+        respuesta = "Por favor enviar más información"     
+    
+    return HttpResponse(respuesta)
+
+
+
+def busquedaPaciente(request):
+    
+    return render(request,'AppMedica/busquedaPaciente.html')
+
+
+
+def buscarPaciente(request):
+    
+    
+    if request.GET["apellido"]:
+        
+        apellido = request.GET["apellido"]
+        
+        pacientes = Paciente.objects.filter(apellido__icontains=apellido)
+    
+        
+        return render(request, "AppMedica/resultadoPacientes.html",{"pacientes":pacientes, "apellido":apellido})
+         
+         
+    else: 
+        
+        respuesta = "Por favor enviar más información"     
+    
+    return HttpResponse(respuesta)
+
 

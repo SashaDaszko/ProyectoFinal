@@ -18,6 +18,7 @@ class PacienteFormulario(forms.Form):
     fNac=forms.DateField(initial=datetime.date.today)
     telefono=forms.IntegerField()
     email=forms.EmailField()
+    servicioSolicitado=forms.CharField(max_length=40)
     
 class ContactoFormulario(forms.Form):
     

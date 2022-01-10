@@ -17,7 +17,7 @@ urlpatterns = [
     path('contactoFormulario/',views.contactoFormulario,name='ContactoFormulario'),
     path ('busquedaMedico', views.busquedaMedico),
     path('buscarMedico/', views.buscarMedico),
-    path ('busquedaPaciente', views.busquedaPaciente),
+    path ('busquedaPaciente', views.busquedaPaciente, name="BusquedaPaciente"),
     path('buscarPaciente/', views.buscarPaciente),
     
     #CRUD

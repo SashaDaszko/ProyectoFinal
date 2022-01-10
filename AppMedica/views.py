@@ -167,9 +167,9 @@ def editarMedicos(request, matricula_para_editar):
             
             informacion = miFormulario.cleaned_data
         
-            medico.apellido=informacion["apellido"], 
-            medico.especialidad=informacion["especialidad"],
-            medico.matricula=informacion["matricula"],
+            medico.apellido=informacion["apellido"]
+            medico.especialidad=informacion["especialidad"]
+            medico.matricula=informacion["matricula"]
             medico.email=informacion["email"]
                 
             

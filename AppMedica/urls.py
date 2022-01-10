@@ -20,7 +20,7 @@ urlpatterns = [
     #CRUD
     path('leerMedicos', views.leerMedicos, name='LeerMedicos'),
     path('eliminarMedicos/<matricula_para_borrar>/', views.eliminarMedicos, name="EliminarMedicos"),
-    
+    path('editarMedicos/<matricula_para_editar>/', views.editarMedicos, name="EditarMedicos"),
     
     
     

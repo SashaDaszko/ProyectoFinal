@@ -48,24 +48,24 @@ def pacienteFormulario (request):
         
         miFormulario = PacienteFormulario()
     
-    #return HttpResponse ("Esto es una prueba de inicio")
+ 
     return render(request,'AppMedica/pacienteFormulario.html',{"miFormulario":miFormulario})
 
 
 def medicoFormulario (request):
    
-    #Obtiene la direccion el anioFund
+
     if request.method == "POST":
         
         miFormulario = MedicoFormulario(request.POST)
         
-        if miFormulario.is_valid():  # va con ()
+        if miFormulario.is_valid():  
             
             informacion = miFormulario.cleaned_data
         
             medicoInsta = Medico(apellido=informacion["apellido"], especialidad=informacion["especialidad"],matricula=informacion["matricula"],email=informacion["email"])
             
-            medicoInsta.save()  #Este save guarda en la base de datos
+            medicoInsta.save()  
             
             return render(request,'AppMedica/inicio.html') 
         
@@ -73,7 +73,7 @@ def medicoFormulario (request):
         
         miFormulario = MedicoFormulario()
     
-    #return HttpResponse ("Esto es una prueba de inicio")
+   
     return render(request,'AppMedica/medicoFormulario.html',{"miFormulario":miFormulario})
 
 
@@ -154,8 +154,35 @@ def eliminarMedicos(request, matricula_para_borrar):
     return render(request, 'AppMedica/leerMedicos.html', {'medicos': medicos})
     
     
+  
+def editarMedicos(request, matricula_para_editar):
     
+    medico = Medico.objects.get(matricula=matricula_para_editar)
+
+    if request.method == "POST":
+        
+        miFormulario = MedicoFormulario(request.POST)
+        
+        if miFormulario.is_valid():  
+            
+            informacion = miFormulario.cleaned_data
+        
+            medico.apellido=informacion["apellido"], 
+            medico.especialidad=informacion["especialidad"],
+            medico.matricula=informacion["matricula"],
+            medico.email=informacion["email"]
+                
+            
+            medico.save()  
+            
+            return render(request,'AppMedica/inicio.html') 
+        
+    else:
+        
+        miFormulario = MedicoFormulario(initial={"apellido":medico.apellido,"especialidad":medico.especialidad,"matricula":medico.matricula,"email":medico.email})
     
+   
+    return render(request,'AppMedica/editarMedicos.html',{"miFormulario":miFormulario, "matricula_para_editar": matricula_para_editar})  
     
 
 

@@ -5,7 +5,6 @@ import datetime
 
 class MedicoFormulario(forms.Form):
     
-    
     apellido = forms.CharField(max_length=40)
     especialidad = forms.CharField(max_length=40)
     matricula = forms.IntegerField()

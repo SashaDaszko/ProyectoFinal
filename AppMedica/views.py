@@ -8,7 +8,7 @@ from django.views.generic.detail import DetailView
 
 from AppMedica.models import Medico,Paciente,Contacto
 
-from AppMedica.forms import MedicoFormulario,ContactoFormulario,PacienteFormulario
+from AppMedica.forms import MedicoFormulario,ContactoFormulario,PacienteFormulario, UserRegisterForm, UserEditForm, AvatarFormulario
 
 from django.contrib.auth.models import User
 

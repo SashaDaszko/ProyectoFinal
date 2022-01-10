@@ -16,7 +16,6 @@ class Paciente(models.Model):
 
     nombre = models.CharField(max_length=40)
     apellido = models.CharField(max_length=40)
-    dni = models.IntegerField()
     fNac = models.DateField()
     telefono = models.IntegerField()
     email = models.EmailField(null=True)
@@ -25,7 +24,7 @@ class Paciente(models.Model):
     
     def __str__(self):
 
-        return f"{self.nombre}, {self.apellido}, {self.dni}, {self.fNac}, {self.telefono}, {self.email}, {self.servicio}"
+        return f"{self.nombre}, {self.apellido}, {self.fNac}, {self.telefono}, {self.email}, {self.servicio}"
 
 
 class Contacto(models.Model):

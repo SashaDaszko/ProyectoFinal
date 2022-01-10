@@ -17,6 +17,10 @@ urlpatterns = [
     path ('busquedaPaciente', views.busquedaPaciente),
     path('buscarPaciente/', views.buscarPaciente),
     
+    #CRUD
+    path('leerMedicos', views.leerMedicos, name='LeerMedicos'),
+    path('eliminarMedicos/<matricula_para_borrar>/', views.eliminarMedicos, name="EliminarMedicos"),
+    
     
     
     

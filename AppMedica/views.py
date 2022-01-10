@@ -5,18 +5,18 @@ from AppMedica.forms import MedicoFormulario,ContactoFormulario,PacienteFormular
 
 def contactoFormulario (request):
     
-    #Obtiene la direccion el anioFund
+    
     if request.method == "POST":
         
         miFormulario = ContactoFormulario(request.POST)
         
-        if miFormulario.is_valid():  # va con ()
+        if miFormulario.is_valid():  
             
             informacion = miFormulario.cleaned_data
         
             contactoInsta = Contacto(nombre=informacion["nombre"], apellido=informacion["apellido"],email=informacion["email"],tel=informacion["tel"],mensaje=informacion["mensaje"])
             
-            contactoInsta.save()  #Este save guarda en la base de datos
+            contactoInsta.save()  
             
             return render(request,'AppMedica/inicio.html') 
         
@@ -24,23 +24,23 @@ def contactoFormulario (request):
         
         miFormulario = ContactoFormulario()
     
-    #return HttpResponse ("Esto es una prueba de inicio")
+    
     return render(request,'AppMedica/contactoFormulario.html',{"miFormulario":miFormulario})
 
 def pacienteFormulario (request):
     
-    #Obtiene la direccion el anioFund
+   
     if request.method == "POST":
         
         miFormulario = PacienteFormulario(request.POST)
         
-        if miFormulario.is_valid():  # va con ()
+        if miFormulario.is_valid():  
             
             informacion = miFormulario.cleaned_data
         
-            pacienteInsta = Paciente(nombre=informacion["nombre"], apellido=informacion["apellido"],fNac=informacion["fNac"], telefono=informacion["telefono"], email=informacion["email"], servicio=informacion["servicio"])
+            pacienteInsta = Paciente(nombre=informacion["nombre"], apellido=informacion["apellido"],dni=informacion["dni"],fNac=informacion["fNac"], telefono=informacion["telefono"], email=informacion["email"], servicio=informacion["servicio"])
             
-            pacienteInsta.save()  #Este save guarda en la base de datos
+            pacienteInsta.save()  
             
             return render(request,'AppMedica/inicio.html') 
         
@@ -132,6 +132,31 @@ def buscarMedico(request):
     
     return HttpResponse(respuesta)
 
+
+def leerMedicos(request):
+    
+    medicos = Medico.objects.all()
+    
+    dir = {'medicos':medicos}
+    
+    return render(request,"AppMedica/leerMedicos.html",dir)
+
+
+
+def eliminarMedicos(request, matricula_para_borrar):
+    
+    medicoAEliminar = Medico.objects.get(matricula=matricula_para_borrar)
+    medicoAEliminar.delete()
+    
+    #Volver al menú
+    medicos = Medico.objects.all()
+    
+    return render(request, 'AppMedica/leerMedicos.html', {'medicos': medicos})
+    
+    
+    
+    
+    
 
 
 def busquedaPaciente(request):

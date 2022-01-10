@@ -4,17 +4,18 @@ from django.forms.fields import EmailField, IntegerField,CharField
 import datetime
 
 class MedicoFormulario(forms.Form):
-    #Especificar los campos
+    
     
     apellido = forms.CharField(max_length=40)
     especialidad = forms.CharField(max_length=40)
-    matricula = IntegerField()
-    email= EmailField()
+    matricula = forms.IntegerField()
+    email = forms.EmailField()
     
 class PacienteFormulario(forms.Form):
     
     nombre=forms.CharField(max_length=40)
     apellido=forms.CharField(max_length=40)
+    dni=forms.IntegerField()
     fNac=forms.DateField(initial=datetime.date.today)
     telefono=forms.IntegerField()
     email=forms.EmailField()

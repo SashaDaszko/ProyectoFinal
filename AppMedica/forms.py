@@ -67,3 +67,4 @@ class AvatarFormulario(forms.Form):
 
     
     imagen = forms.ImageField(required=True)
+    

@@ -1,6 +1,9 @@
 from django.urls import path
 from AppMedica import views,forms
 
+#PARA EL LOGOUT
+from django.contrib.auth.views import LogoutView
+
 
 urlpatterns = [
     
@@ -21,6 +24,21 @@ urlpatterns = [
     path('leerMedicos', views.leerMedicos, name='LeerMedicos'),
     path('eliminarMedicos/<matricula_para_borrar>/', views.eliminarMedicos, name="EliminarMedicos"),
     path('editarMedicos/<matricula_para_editar>/', views.editarMedicos, name="EditarMedicos"),
+    
+    
+    
+    
+    path('login', views.login_request, name="Login"),
+    path('register', views.register, name="Register"),
+    
+    path('logout', LogoutView.as_view(template_name='AppMedica/logout.html'), name="Logout"),
+    
+    path('editarPerfil', views.editarPerfil, name="EditarPerfil"),
+    
+    
+    path('agregarAvatar', views.agregarAvatar, name="AgregarAvatar")
+    
+    
     
     
     

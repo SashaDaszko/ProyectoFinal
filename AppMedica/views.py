@@ -160,7 +160,7 @@ def buscarMedico(request):
     
     return HttpResponse(respuesta)
 
-
+@login_required
 def leerMedicos(request):
     
     medicos = Medico.objects.all()
@@ -306,7 +306,7 @@ def register(request):
       return render(request,"AppMedica/register.html" ,  {"form":form})
   
   
-
+@login_required
 def editarPerfil(request):
     
     
@@ -336,7 +336,7 @@ def editarPerfil(request):
     return render(request, "AppMedica/editarPerfil.html", {"miFormulario":miFormulario, "usuario":usuario})
 
 
-
+@login_required
 def agregarAvatar(request):
       if request.method == 'POST':
 

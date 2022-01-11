@@ -1,5 +1,7 @@
 from django.db import models
 from django.db.models.fields import EmailField, IntegerField,CharField
+from django.contrib.auth.models import User
+from django.db.models.fields.files import ImageField
 
 class Medico(models.Model):
 

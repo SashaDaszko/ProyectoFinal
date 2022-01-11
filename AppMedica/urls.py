@@ -15,11 +15,11 @@ urlpatterns = [
     path('medicoFormulario/',views.medicoFormulario,name="MedicoFormulario"),
     path('pacienteFormulario/',views.pacienteFormulario,name="PacienteFormulario"),
     path('contactoFormulario/',views.contactoFormulario,name='ContactoFormulario'),
-    path ('busquedaMedico', views.busquedaMedico),
+    path('busquedaMedico', views.busquedaMedico),
     path('buscarMedico/', views.buscarMedico),
-    path ('busquedaPaciente', views.busquedaPaciente, name="BusquedaPaciente"),
+    path('busquedaPaciente', views.busquedaPaciente, name="BusquedaPaciente"),
     path('buscarPaciente/', views.buscarPaciente),
-    path('about/',views.about,name="About"),
+    path('about',views.about,name="About"),
     
     #CRUD
     path('leerMedicos', views.leerMedicos, name='LeerMedicos'),

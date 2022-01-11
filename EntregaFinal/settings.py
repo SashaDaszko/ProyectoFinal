@@ -126,7 +126,7 @@ STATIC_URL = '/static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-LOGIN_URL = '/AppCoder/login'
+LOGIN_URL = '/AppMedica/login'
 
 
 MEDIA_URL = '/media/'

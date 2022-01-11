@@ -35,6 +35,14 @@
                         <li class="nav-item"><a class="nav-link" href="{% url 'Pacientes' %}">Pacientes</a></li>
                         <li class="nav-item"><a class="nav-link" href="{% url 'Medicos' %}">Medicos</a></li>
                         <li class="nav-item"><a class="nav-link" href="{% url 'Contacto' %}">Contacto</a></li>
+                        {% if not request.user.is_authenticated %}
+                            <li class="sidebar-nav-item"><a href="{% url 'Login' %}">HACER LOGIN</a></li>
+                        {% endif %}
+
+
+                        {% if  request.user.is_authenticated %}
+                            <li class="sidebar-nav-item"><a href="">Hola, {{user.username}}</a></li>
+                        {% endif %}
                     </ul>
                 </div>
             </div>
@@ -170,8 +178,11 @@
                         </form>
                     </div>
                 </div>
-        {%endblock%}        
+        {%endblock%}
+        {%block contenido5%}
         <a class="btn btn-primary btn-xl" href="{% url 'About' %}">About us</a>
+        {%endblock%}
+        
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-lg-4 text-center mb-5 mb-lg-0">
                         <i class="bi-phone fs-2 mb-3 text-muted"></i>

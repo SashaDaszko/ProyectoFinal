@@ -6,7 +6,7 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic import ListView
 from django.views.generic.detail import DetailView
 
-from AppMedica.models import Medico,Paciente,Contacto
+from AppMedica.models import Medico,Paciente,Contacto,Avatar
 
 from AppMedica.forms import MedicoFormulario,ContactoFormulario,PacienteFormulario, UserRegisterForm, UserEditForm, AvatarFormulario
 
@@ -16,6 +16,7 @@ from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login, logout, authenticate
 
 from django.contrib.auth.decorators import login_required
+from django.views.decorators.csrf import csrf_exempt
 
 
 def contactoFormulario (request):
@@ -92,7 +93,6 @@ def medicoFormulario (request):
     return render(request,'AppMedica/medicoFormulario.html',{"miFormulario":miFormulario})
 
 
-
 def inicio(request):
     
     diccionario = {}
@@ -105,11 +105,12 @@ def inicio(request):
             cantidadDeAvatares = cantidadDeAvatares + 1
     
     
-        diccionario["avatar"] = avatar[cantidadDeAvatares-1].imagen.url 
+        diccionario["Avatar"] = avatar[cantidadDeAvatares-1].imagen.url 
     
     #return HttpResponse("Esto es una prueba del inicio")
 
     return render(request,'AppMedica/inicio.html')
+
 
 def servicios(request):
 
@@ -277,7 +278,7 @@ def login_request(request):
 
 
 
-
+@csrf_exempt
 def register(request):
 
       if request.method == 'POST':
@@ -293,7 +294,7 @@ def register(request):
                   
                   form.save()
                   
-                  return render(request,"AppMedica/inicio.html" ,  {"mensaje":f"{username} Creado "})
+                  return render(request,"AppMedica/register.html" ,  {"mensaje":f"{username} Creado "})
 
 
       else:
@@ -349,7 +350,7 @@ def agregarAvatar(request):
       
                   avatar.save()
 
-                  return render(request, "AppMedica/inicio.html")
+                  return render(request, "AppMedica/agregarAvatar.html")
 
       else: 
 

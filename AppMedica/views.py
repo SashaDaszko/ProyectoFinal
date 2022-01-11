@@ -94,9 +94,22 @@ def medicoFormulario (request):
 
 
 def inicio(request):
+    
+    diccionario = {}
+    cantidadDeAvatares = 0
+    
+    if request.user.is_authenticated:
+        avatar = Avatar.objects.filter( user = request.user.id)
+        
+        for a in avatar:
+            cantidadDeAvatares = cantidadDeAvatares + 1
+    
+    
+        diccionario["avatar"] = avatar[cantidadDeAvatares-1].imagen.url 
+    
+    #return HttpResponse("Esto es una prueba del inicio")
 
     return render(request,'AppMedica/inicio.html')
-
 
 def servicios(request):
 

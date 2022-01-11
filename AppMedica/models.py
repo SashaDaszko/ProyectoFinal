@@ -38,3 +38,9 @@ class Contacto(models.Model):
     def __str__(self):
         
         return f"{self.nombre},{self.apellido},{self.email},{self.tel},{self.mensaje}"
+    
+    
+class Avatar(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    
+    imagen = models.ImageField(upload_to='avatares',null=True,blank =True)

@@ -140,7 +140,6 @@ def busquedaMedico(request):
 
 
 
-
 def buscarMedico(request):
     
     
@@ -357,3 +356,6 @@ def agregarAvatar(request):
             miFormulario= AvatarFormulario() #Formulario vacio para construir el html
 
       return render(request, "AppMedica/agregarAvatar.html", {"miFormulario":miFormulario})
+  
+def about(request):
+    return render(request,'AppMedica/about.html')

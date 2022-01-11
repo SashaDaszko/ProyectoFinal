@@ -19,6 +19,7 @@ urlpatterns = [
     path('buscarMedico/', views.buscarMedico),
     path ('busquedaPaciente', views.busquedaPaciente, name="BusquedaPaciente"),
     path('buscarPaciente/', views.buscarPaciente),
+    path('about/',views.about,name="About"),
     
     #CRUD
     path('leerMedicos', views.leerMedicos, name='LeerMedicos'),
@@ -42,4 +43,4 @@ urlpatterns = [
     
     
     
-    ]
+]

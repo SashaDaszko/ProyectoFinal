@@ -21,6 +21,12 @@ urlpatterns = [
     path('buscarPaciente/', views.buscarPaciente),
     path('about',views.about,name="About"),
     path('pages/',views.pages,name="Pages"),
+    path('pagesMedicos/',views.pagesMedicos,name="PagesMedicos"),
+    path('pagesPacientes/',views.pagesPacientes,name="PagesPacientes"),
+    path('pagesContacto/',views.pagesContacto,name="PagesContacto"),
+    
+    
+    
     
     #CRUD
     path('leerMedicos', views.leerMedicos, name='LeerMedicos'),

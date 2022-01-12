@@ -368,6 +368,22 @@ def pages(request):
     return render(request,'AppMedica/pages.html')
 
 
+def pagesMedicos(request):
+    return render(request,'AppMedica/pagesMedicos.html')
+
+
+def pagesPacientes(request):
+    return render(request,'AppMedica/pagesPacientes.html')
+
+
+def pagesContacto(request):
+    return render(request,'AppMedica/pagesContacto.html')
+
+
+
+
+
+
 #Leer --- nos da todos los cursos
 class PacienteList(ListView):
     

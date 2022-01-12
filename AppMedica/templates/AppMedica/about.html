@@ -4,11 +4,34 @@
 {% load static %}
     {% block contenido %}
         <h1 class="text-white font-weight-bold">About</h1>
+
+        <p>
+
+            <h5 class="text-white font-weight-bold">Los autores del proyecto final somos Sasha Daszko y Rodrigo Elvira. 
+                <br>
+                <br>
+                Sasha se encargó del desarrollo del CRUD del modelo Medico y de la clase basada en vistas del modelo Paciente. Desarrolló los formularios, templates correspondientes de cada uno, así como los textos incluidos. Además se ocupó de las vistas y urls de los items mencionados.
+                <br>
+                <br>
+                Rodrigo se encargó de las vistas y configuración de lo relacionado al login y el logout. Estuvo a cargo de los decoradores de las vistas pertinentes. Configuró la inclusión de un avatar para cada usuario. Tambien desarrolló la page about us.
+                <br>
+                <br>
+                Durante todo el proceso siempre se trabajo en conjunto, siguiendo paso a paso los ejemplos vistos durante las clases, utilizando como complemento la información disponible en los ppt del curso.
+                Rodrigo siguió las instrucciones de los ppt y Sasha comparaba con el proyecto de ejemplo para reconfirmar lo realizado y poder identificar posibles errores en la ejecución del server.
+
+
+
+
+            </h5>
+
+
+        </p>
+
     {% endblock %}
 
     {% block contenido2 %}
 
-        <a class="btn btn-primary btn-xl" href="{% url 'About' %}">Falta texto</a>
+        <a class="btn btn-primary btn-xl" href="{% url 'Inicio' %}">Menu Inicio</a>
 
         <hr>
 

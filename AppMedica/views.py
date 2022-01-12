@@ -103,9 +103,8 @@ def inicio(request):
         
         for a in avatar:
             cantidadDeAvatares = cantidadDeAvatares + 1
-    
-    
-        diccionario["Avatar"] = avatar[cantidadDeAvatares-1].imagen.url 
+        
+       
     
     #return HttpResponse("Esto es una prueba del inicio")
 
@@ -170,7 +169,7 @@ def leerMedicos(request):
     return render(request,"AppMedica/leerMedicos.html",dir)
 
 
-
+@login_required
 def eliminarMedicos(request, matricula_para_borrar):
     
     medicoAEliminar = Medico.objects.get(matricula=matricula_para_borrar)
@@ -182,7 +181,7 @@ def eliminarMedicos(request, matricula_para_borrar):
     return render(request, 'AppMedica/leerMedicos.html', {'medicos': medicos})
     
     
-  
+@login_required  
 def editarMedicos(request, matricula_para_editar):
     
     medico = Medico.objects.get(matricula=matricula_para_editar)
@@ -283,28 +282,25 @@ def register(request):
 
       if request.method == 'POST':
 
-            
-            
             form = UserRegisterForm(request.POST)
             
             if form.is_valid():
 
                   username = form.cleaned_data['username']
                   
-                  
+                                 
                   form.save()
                   
-                  return render(request,"AppMedica/register.html" ,  {"mensaje":f"{username} Creado "})
+                  return render(request,"AppMedica/inicio.html" ,  {"mensaje":f"{username} Creado "})
 
 
-      else:
-                
-            
+      else:     
+            miFormulario= AvatarFormulario() #Formulario vacio para construir el html
               
             form = UserRegisterForm()     
 
       return render(request,"AppMedica/register.html" ,  {"form":form})
-  
+             
   
 @login_required
 def editarPerfil(request):
@@ -323,7 +319,8 @@ def editarPerfil(request):
             usuario.email = informacion['email']
             usuario.password1 = informacion['password1']
             usuario.password2 = informacion['password2']
-            
+            usuario.last_name = informacion['last_name']
+            usuario.first_name = informacion['first_name']
             usuario.save()
             
             return render(request, "AppMedica/inicio.html")
@@ -350,7 +347,7 @@ def agregarAvatar(request):
       
                   avatar.save()
 
-                  return render(request, "AppMedica/agregarAvatar.html")
+                  return render(request, "AppMedica/inicio.html")
 
       else: 
 
@@ -403,14 +400,14 @@ class PacienteCreacion(CreateView):
     success_url = "../AppMedica/paciente/list"  #AppCoder/template/AppCoder/editar
     fields = ["nombre", "apellido", "fNac", "telefono", "email", "servicio"]
     
-#modificar!!!!!!!!!!!  
+#modificar!!!!!!!!!!! 
 class PacienteUpdate(UpdateView):
     
     model = Paciente
     success_url = "../paciente/list"
     fields = ["nombre", "apellido", "fNac", "telefono", "email", "servicio"]
   
-#Borrar   
+#Borrar 
 class PacienteDelete(DeleteView):
     
     model = Paciente

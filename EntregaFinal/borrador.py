@@ -22,3 +22,8 @@ def inicio(request):
     avatares=Avatar.objects.filter(user=request.user.id)
     
     return render(request, 'AppMedica/inicio.html',{"url":avatares[0].imagen.url})
+
+
+
+return render(request, 'page-retailer-single.html', 
+              {"products": products,"sorting": filt["sorting"], "filtering": filt["filtering"],"retailer": retailer,})

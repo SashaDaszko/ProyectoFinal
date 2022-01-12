@@ -3,12 +3,12 @@
 
 {% load static %}
 
-        {% block contenido2 %}
+        {% block contenido %}
             <h1 class="mb-1">Confirma el delete</h1>
         {% endblock %}
 
 
-        {% block contenido %}
+        {% block contenido2 %}
 
 
             <form method="post"> {% csrf_token %}
@@ -24,5 +24,15 @@
          
 
         {% endblock %}
+
+        {% block contenido3 %}
+
+
+        {% endblock %}
+        {% block contenido4 %}
+
+        {% endblock %}
+        {%block contenido5%}
+        {%endblock%}
 
 

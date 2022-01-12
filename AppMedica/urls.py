@@ -37,7 +37,19 @@ urlpatterns = [
     path('editarPerfil', views.editarPerfil, name="EditarPerfil"),
     
     
-    path('agregarAvatar', views.agregarAvatar, name="AgregarAvatar")
+    path('agregarAvatar', views.agregarAvatar, name="AgregarAvatar"),
+    
+    
+    #PARA CLASES BASADAS EN VISTAS
+    path('paciente/list', views.PacienteList.as_view(), name='List'),
+    
+    path(r'^(?P<pk>\d+)$', views.PacienteDetalle.as_view(), name='Detail'),
+    
+    path(r'^nuevo$', views.PacienteCreacion.as_view(), name='New'),
+    
+    path(r'^editar/(?P<pk>\d+)$', views.PacienteUpdate.as_view(), name='Edit'),
+    
+    path(r'^borrar/(?P<pk>\d+)$', views.PacienteDelete.as_view(), name='Delete'),
     
     
     

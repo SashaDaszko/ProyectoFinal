@@ -357,6 +357,41 @@ def agregarAvatar(request):
             miFormulario= AvatarFormulario() #Formulario vacio para construir el html
 
       return render(request, "AppMedica/agregarAvatar.html", {"miFormulario":miFormulario})
-  
+
+
+ 
 def about(request):
     return render(request,'AppMedica/about.html')
+
+
+#Leer --- nos da todos los cursos
+class PacienteList(ListView):
+    
+    model = Paciente
+    template_name = "AppMedica/paciente_list.html"
+    
+#Detalle - SUPER Leer - Buscar!!!!!
+class PacienteDetalle(DetailView):
+    
+    model = Paciente
+    template_name = "AppMedica/paciente_detalle.html"
+    
+#Crear elementos
+class PacienteCreacion(CreateView):
+    
+    model = Paciente
+    success_url = "../AppMedica/paciente/list"  #AppCoder/template/AppCoder/editar
+    fields = ["nombre", "apellido", "fNac", "telefono", "email", "servicio"]
+    
+#modificar!!!!!!!!!!!  
+class PacienteUpdate(UpdateView):
+    
+    model = Paciente
+    success_url = "../paciente/list"
+    fields = ["nombre", "apellido", "fNac", "telefono", "email", "servicio"]
+  
+#Borrar   
+class PacienteDelete(DeleteView):
+    
+    model = Paciente
+    success_url = "../paciente/list"

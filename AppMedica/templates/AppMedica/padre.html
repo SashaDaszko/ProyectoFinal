@@ -43,7 +43,7 @@
 
 
                         {% if  request.user.is_authenticated %}
-                            <li class="sidebar-nav-item"><a href="">Hola, {{user.username}}</a></li>
+                            <li class="sidebar-nav-item"><a href="{% url 'EditarPerfil' %}">Hola, {{user.username}}</a></li>
                         {% endif %}
                     </ul>
                 </div>

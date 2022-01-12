@@ -160,7 +160,7 @@ def buscarMedico(request):
     
     return HttpResponse(respuesta)
 
-@login_required
+
 def leerMedicos(request):
     
     medicos = Medico.objects.all()

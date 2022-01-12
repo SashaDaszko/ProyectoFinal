@@ -37,7 +37,7 @@
                         <li class="nav-item"><a class="nav-link" href="{% url 'Contacto' %}">Contacto</a></li>
                         <li class="nav-item"><a class="nav-link" href="{% url 'About' %}">About us</a></li>
                         {% if not request.user.is_authenticated %}
-                            <li class="sidebar-nav-item"><a href="{% url 'Login' %}">HACER LOGIN</a></li>
+                            <li class="sidebar-nav-item"><a href="{% url 'Login' %}">LOGIN</a></li>
                         {% endif %}
 
 

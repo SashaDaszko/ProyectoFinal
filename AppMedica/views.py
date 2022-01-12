@@ -364,6 +364,10 @@ def about(request):
     return render(request,'AppMedica/about.html')
 
 
+def pages(request):
+    return render(request,'AppMedica/pages.html')
+
+
 #Leer --- nos da todos los cursos
 class PacienteList(ListView):
     

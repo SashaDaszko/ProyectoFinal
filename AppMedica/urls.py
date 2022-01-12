@@ -20,6 +20,7 @@ urlpatterns = [
     path('busquedaPaciente', views.busquedaPaciente, name="BusquedaPaciente"),
     path('buscarPaciente/', views.buscarPaciente),
     path('about',views.about,name="About"),
+    path('pages/',views.pages,name="Pages"),
     
     #CRUD
     path('leerMedicos', views.leerMedicos, name='LeerMedicos'),

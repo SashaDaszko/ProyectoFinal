@@ -34,7 +34,7 @@ Si se trata de un usuario "paciente", la página de inicio dispone de un botón 
 <p>En caso de ser un usuario 'médico', la página le permite ingresar al módulo 'Medicos' donde encontrará información del staff actual y un botón de formulario de contacto por si está interesado en formar parte de CHApp Medica.</p>
 
 
-Link de Video final: https://drive.google.com/file/d/1XFPJko_Y0ECnjDMnYvpE2sslpLiNXl9n/view?usp=sharing
+Link de Video final: https://drive.google.com/file/d/1nn7NCdUiuJ2TXUJ2K0ISjsLneJhKsFn_/view?usp=sharing
 
 
 

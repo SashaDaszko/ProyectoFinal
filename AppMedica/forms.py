@@ -6,6 +6,7 @@ import datetime
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 
+
 class MedicoFormulario(forms.Form):
     
     apellido = forms.CharField(max_length=40)

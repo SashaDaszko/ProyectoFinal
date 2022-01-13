@@ -67,7 +67,7 @@ def pacienteFormulario (request):
  
     return render(request,'AppMedica/pacienteFormulario.html',{"miFormulario":miFormulario})
 
-
+@login_required
 def medicoFormulario (request):
    
 
